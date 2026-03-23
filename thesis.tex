@@ -76,7 +76,7 @@
 % and Section Name in Header on Odd Side (Right Odd). Page numbering in footer
 
 % Uncomment to change page style
-%\pagestyle{PageStyleII}
+\pagestyle{PageStyleII}
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
@@ -106,8 +106,22 @@
  \includeonly{Chapter3/chapter3}
 \fi
 
+% ******************************** TOC Numbers set as BLUE ********************************
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
+
 % ******************************** Front Matter ********************************
 \begin{document}
+
+% ******************************** Make TOC have three subsections ********************************
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
 
 \frontmatter
 
@@ -137,8 +151,8 @@
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
-%\include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
+\include{Chapter4/chapter4}
+\include{Chapter5/chapter5}
 %\include{Chapter6/chapter6}
 %\include{Chapter7/chapter7}
 
