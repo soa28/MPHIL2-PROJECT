@@ -5,7 +5,7 @@
 % Set {innerside margin / outerside margin / topmargin / bottom margin}  and
 % other page dimensions
 \ifsetCustomMargin
-  \RequirePackage[left=37mm,right=30mm,top=30mm,bottom=30mm]{geometry}
+  \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
   \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
 
@@ -113,12 +113,61 @@
 
 % Add `custombib' in the document class option to use this section
 \ifuseCustomBib
-   \RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
-
+   %\RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
-%\addbibresource{References/references} %Location of references.bib only for biblatex, Do not omit the .bib extension from the filename.
+%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true, backref=true]{biblatex}
+\RequirePackage[backend=biber, style=authoryear, maxcitenames=1, mincitenames=1, maxbibnames=99, citestyle=authoryear, sorting=nty, natbib=true, dashed=false, backref=true]{biblatex}
+
+\addbibresource{References/references.bib} %Location of references.bib only for biblatex, Do not omit the .bib extension from the filename.
+
+%This is for removing cite on p 
+\renewbibmacro*{pageref}{
+  \printtext{
+    \iflistundef{pageref}
+      {}
+      {\printlist{pageref}}
+  }
+}
+
+% Spacing and layout
+\setlength\bibitemsep{0.5em}   % space between entries
+%\setlength\bibhang{1.5em}      % hanging indent
+\setlength\bibhang{0pt}
+%\setlength\parskip{0pt}
+
+% Font and style
+\RequirePackage{ragged2e}
+\AtBeginBibliography{%
+  \urlstyle{same}%
+  \scriptsize
+  \justifying
+  \rmfamily
+  %\raggedright
+  \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}} %
+  \renewcommand*{\finalnamedelim}{\addspace\bibstring{and}\space}%
+}
+
+\DeclareNameAlias{default}{family-given}
+
+% Control name truncation
+\ExecuteBibliographyOptions{
+   maxcitenames=1,
+   mincitenames=1,
+   maxbibnames=99
+}
+% For wrapping link for author and year citation
+\DeclareCiteCommand{\citep}
+  {\usebibmacro{prenote}}
+  {\printtext[bibhyperref]{%
+     \printnames{labelname}%
+     \setunit{\nameyeardelim}%
+     \printfield{year}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\let\oldcitep\citep
+\renewcommand{\citep}[1]{\mkbibbrackets{\oldcitep{#1}}}
 
 \fi
 

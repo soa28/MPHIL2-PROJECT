@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,times,custombib,print,index]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -107,7 +107,9 @@
 \fi
 
 % ******************************** TOC Numbers set as BLUE ********************************
-\usepackage{hyperref}
+%\usepackage{hyperref}
+
+%\usepackage[backref=page,colorlinks=true,citecolor=blue]{hyperref}
 
 \hypersetup{
     colorlinks=true,
@@ -169,11 +171,13 @@
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 %\bibliographystyle{unsrt} % Use for unsorted references  
+
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
-\cleardoublepage
-\bibliography{References/references} % Path to your References.bib file
+
+%\cleardoublepage
+%\bibliography{References/references} % Path to your References.bib file
 
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as
@@ -181,7 +185,7 @@
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
 
 \end{spacing}

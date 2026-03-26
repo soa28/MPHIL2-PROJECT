@@ -15,34 +15,34 @@
 %********************************** %First Section  **************************************
 \section{Motivation and challenge \texorpdfstring{}{}} %Section - 1.1 
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry (see 
-Section~\ref{section1.3}). Lorem Ipsum~\citep{Aup91} has been the industry's 
-standard dummy text ever since the 1500s, when an unknown printer took a galley 
-of type and scrambled it to make a type specimen book. It has survived not only 
-five centuries, but also the leap into electronic typesetting, remaining 
-essentially unchanged. It was popularised in the 1960s with the release of 
-Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-publishing software like Aldus PageMaker including versions of Lorem 
-Ipsum~\citep{AAB95,Con90,LM65}.
+\noindent Combustion has been integral to human development, evolving from early domestic applications such as heating and cooking, through industrial processes including ore smelting, glass production, and ceramic manufacturing, to modern technologies such as steam engines, transportation systems, and power generation~\citep{Lackner}. The science of combustion itself has a long and well‑established history~\citep{Bilger,Lackner,Allen,Deane,Richardson,Stavrianos}. Today, the combustion of fossil fuels remains the predominant source of global energy and is expected to retain that role for the foreseeable future owing to the sustained availability of resources such as coal.  The BP statistical review of world energy~\citep{BP} reports that fossil fuels accounted for approximately 82\% of primary energy consumption as shown in Figure~\ref{fig:share}. Although renewable energy supply increased by over 8 EJ compared with the previous year, overall fossil‑fuel consumption was not reduced; primary energy demand rose by 5.8\% in 2021 and exceeded 2019 levels by 1.3\%, indicating that fossil fuels are likely to continue to dominate the global energy supply. It is well known that combustion not only generates heat that can be converted into power but also produces pollutants such as nitrogen oxides, soot, and unburnt hydrocarbons~\citep {Peters_2000,lieuwen}. Consequently, the combustion of fossil fuels contributes to environmental degradation and atmospheric pollution through greenhouse gas emissions and toxic species. Increasingly stringent legislations are therefore compelling hard-to-abate sectors, such as aviation, power, and the automotive industry, to reduce pollutant emissions to protect the environment. One approach adopted by these industries is the replacement of conventional hydrocarbon fuels with low or zero carbon alternatives such as hydrogen. 
 
-The most famous equation in the world: $E^2 = (m_0c^2)^2 + (pc)^2$, which is 
-known as the \textbf{energy-mass-momentum} relation as an in-line equation.
+\begin{figure}[htbp!] 
+\centering    
+\includegraphics[width=0.5\textwidth]{share1.png}
+\caption[share]{Global primary energy consumption by source (EJ and \%)~\citep{BP}}
+\label{fig:share}
+\end{figure}
 
-A {\em \LaTeX{} class file}\index{\LaTeX{} class file@LaTeX class file} is a file, which holds style information for a particular \LaTeX{}.
+Hydrogen combustion systems are gaining increasing attention as a pathway to meet decarbonisation targets and comply with emerging climate policies. However, hydrogen flames present significant challenges for flame stabilisation, as they are characterised by higher burning velocities, thinner reaction zones, and a greater propensity to propagate close to injector lips while often operating in a diffusion mode~\citep{Chaplet}. In addition, hydrogen exhibits a high propensity for spontaneous ignition compared with conventional fuels, further complicating its safe handling and application~\citep{Astbury}. Over the past four decades, the progressive refinement of combustion technologies has been a principal factor in lowering atmospheric pollution in industrialised nations~\citep{Sawyer}. In fact, since the mid-1970, combustion science has advanced substantially in response to demands for energy security and environmental protection, driven by progress in mathematical analysis, computational modelling and experimental techniques~\citep {Law_2006}. However, the use of computational approaches is not without its own challenges, as engineers continue to develop methods to address the complexity of reacting flows and turbulence in practical combustion systems, a complexity that requires a detailed interdisciplinary understanding of thermodynamics, chemical kinetics, fluid mechanics, and transport phenomena~\citep{Law_2006}.
+
+The continued development of computational fluid dynamics (CFD) has significantly enhanced the role of numerical simulation in modern combustion research for both academic and industrial applications~\citep{poinsot}. Numerical simulation enables detailed three dimensional and time dependent analysis of flame structures with accurate chemical and transport models, supporting the understanding and modelling of combustion phenomena~\citep{Mizobuchi2005}. It also provides insight into turbulence chemistry interactions by overcoming limitations associated with experimental measurement techniques~\citep{Gong}, and has therefore been widely employed alongside experimental investigations to study flame stabilisation in turbulent lifted hydrogen jet flames~\citep{Brockhinke,Mizobuchi2005, Mizobuchi2002,Yoo2009,TCheng1992,Schumann2025}. These investigations are typically conducted under lean operating conditions, to improve efficiency, reduce flame temperatures and thereby reduce pollutant emissions \citep {Driscoll2011,Massey2019}, although such conditions also increase susceptibility to ignition failure and flame instability~\citep{Gicquel2012}. 
+
+\begin{figure}[htbp!] 
+\centering    
+\includegraphics[width=0.3\textwidth]{share2.jpg}
+\caption[share1]{Schematic diagram of the lifted flame~\citep{Lawn2009}}
+\label{fig:share1}
+\end{figure}
+
+Combustion frequently involves the interaction of a fuel and an oxidiser, and the way these reactants are mixed determines the type of flame formed, strongly influencing the combustion behaviour~\citep {Law_2006}. The mode of mixing between fuel and oxidiser determines the type of flame formed and consists of premixed combustion in which reactants are initially mixed, non-premixed mode in which mixing occurs through molecular diffusion, and partially premixed combustion which arises in practical turbulent systems due to incomplete mixing prior to ignition, making the understanding of flame stabilisation mechanisms essential~\citep{Peters_2000,Law_2006,Syred2006}. 
+
+Flames in large industrial boilers and gas turbines are commonly stabilised using non premixed jet configurations, with swirling flows employed to extend the range of flame stability in combustion systems; however, as this research does not consider swirl stabilised flows, the reader is referred to the relevant literature for further discussion~\citep{Massey2022,Feikema1990}. The turbulent lifted hydrogen jet flame arises under conditions of partially premixed combustion and is characterised by a separation between the flame stabilisation root and the burner nozzle, defined as the lift off height H, as shown in Figure~\ref{fig:share1}. This configuration involves fuel injected into quiescent air, forming inhomogeneous mixtures where the flame remains attached at low jet velocities but stabilises downstream at higher velocities due to turbulence and local extinction~\citep{Peters_2000}, and is commonly preferred in practical systems to protect the burner nozzle~\citep{Mansour2003}. In a turbulent lifted jet flame, uneven mixing occurs upstream of the flame root, leading to different combustion behaviours at various locations. Hence, combustion is said to be multi-modal~\citep{Schumann2025,Mizobuchi2005,Mizobuchi2002}. 
 
 
-\begin{align}
-CIF: \hspace*{5mm}F_0^j(a) = \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(z)}{z - a} dz
-\end{align}
 
-\nomenclature[z-cif]{$CIF$}{Cauchy's Integral Formula}                                % first letter Z is for Acronyms 
-\nomenclature[a-F]{$F$}{complex function}                                                   % first letter A is for Roman symbols
-\nomenclature[g-p]{$\pi$}{ $\simeq 3.14\ldots$}                                             % first letter G is for Greek Symbols
-\nomenclature[g-i]{$\iota$}{unit imaginary number $\sqrt{-1}$}                      % first letter G is for Greek Symbols
-\nomenclature[g-g]{$\gamma$}{a simply closed curve on a complex plane}  % first letter G is for Greek Symbols
-\nomenclature[x-i]{$\oint_\gamma$}{integration around a curve $\gamma$} % first letter X is for Other Symbols
-\nomenclature[r-j]{$j$}{superscript index}                                                       % first letter R is for superscripts
-\nomenclature[s-0]{$0$}{subscript index}                                                        % first letter S is for subscripts
+
+
 
 
 %********************************** %Second Section  *************************************
